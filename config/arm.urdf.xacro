@@ -3,7 +3,7 @@
     <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
 
     <!-- Import arm urdf file -->
-    <xacro:include filename="$(find kalman_arm_controller)/description/urdf/dupsko.urdf" />
+    <xacro:include filename="$(find kalman_arm_controller)/urdf/dupsko.urdf" />
 
     <!-- Import control_xacro -->
     <xacro:include filename="arm.ros2_control.xacro" />
