@@ -1,7 +1,12 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="arm">
     <xacro:arg name="initial_positions_file" default="initial_positions.yaml" />
-
+    <link name="world" />
+    <link name="flange" />
+    <joint name="fix_flange" type="fixed">
+        <parent link="world" />
+        <child link="flange" />        
+    </joint>
     <!-- Import arm urdf file -->
     <xacro:include filename="$(find kalman_arm_controller)/urdf/dupsko.urdf" />
 
@@ -9,6 +14,8 @@
     <xacro:include filename="arm.ros2_control.xacro" />
 
 
-    <xacro:arm_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/>
+    <!-- <xacro:arm_ros2_control name="FakeSystem" initial_positions_file="$(arg initial_positions_file)"/> -->
+    <xacro:include filename="$(find kalman_arm_controller)/ros2_control/arm.ros2_control.xacro" />
+    <xacro:arm_ros2_control name="kalman_arm" />
 
 </robot>
