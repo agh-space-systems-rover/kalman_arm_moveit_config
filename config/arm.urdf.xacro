@@ -8,8 +8,9 @@
         <child link="flange" />        
     </joint>
     <!-- Import arm urdf file -->
-    <xacro:include filename="$(find kalman_arm_controller)/urdf/dupsko.urdf" />
+    <xacro:include filename="$(find kalman_arm_controller)/urdf/arm_description.urdf.xacro" />
 
+    <xacro:arm_description />
     <!-- Import control_xacro -->
     <xacro:include filename="arm.ros2_control.xacro" />
 
