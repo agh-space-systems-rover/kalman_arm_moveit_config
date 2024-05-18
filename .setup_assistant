@@ -1,7 +1,6 @@
 moveit_setup_assistant_config:
   urdf:
-    package: kalman_arm_controller
-    relative_path: urdf/dupsko.urdf
+    relative_path: urdf/arm_generated.urdf
   srdf:
     relative_path: config/arm.srdf
   package_settings:
